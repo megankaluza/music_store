@@ -1,0 +1,21 @@
+{
+  "name": "angular2-skeleton",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Satchel Grant <grantsrb@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "none",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "package": "^0.1.2",
+    "bootstrap": "^3.3.7"
+  }
+}
