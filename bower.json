@@ -3,7 +3,7 @@
   "description": "",
   "main": "gulpfile.js",
   "authors": [
-    "Satchel Grant <grantsrb@gmail.com>"
+    "none"
   ],
   "license": "ISC",
   "homepage": "none",
@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "package": "^0.1.2",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
   }
 }
