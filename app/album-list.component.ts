@@ -16,7 +16,7 @@ import { Album } from './album.model';
     <option value="Folk/Blue-Grass/Country">Folk/Blue-Grass/Country</option>
   </select>
   <div *ngFor="let currentAlbum of childAlbumList | genre:selectedGenre" class="panel">
-    <album-checkbox [album]="currentAlbum"></album-checkbox>
+    <album-checkbox [album]="currentAlbum" (changeCartCountSender)="carryCartCountUp($event)"></album-checkbox>
     <h4>{{currentAlbum.title}}</h4>
     <ul>
       <li>Artist: {{currentAlbum.artist}}</li>
@@ -33,6 +33,7 @@ export class AlbumListComponent {
   @Input() childAlbumList: Album [];
   @Output() editSender = new EventEmitter();
   @Output() deleteSender = new EventEmitter();
+  @Output() carryCartCountUpSender = new EventEmitter();
 
   public selectedGenre: string = "All";
 
@@ -46,6 +47,10 @@ export class AlbumListComponent {
 
   selectGenre(_selectedGenre: string){
     this.selectedGenre = _selectedGenre;
+  }
+
+  carryCartCountUp(_count: number) {
+    this.carryCartCountUpSender.emit(_count);
   }
 
 }

@@ -13,6 +13,7 @@ import { Album } from './album.model';
           [childAlbumList]="masterAlbumList"
           (editSender) = "selectAlbum2Edit($event)"
           (deleteSender) = "deleteAlbum($event)"
+          (carryCartCountUpSender) = "sendCartCountOver($event)"
         ></album-list>
         <album-edit
           [album2Edit] = "selectedAlbum"
@@ -25,6 +26,8 @@ import { Album } from './album.model';
       <div class="col-sm-5">
         <cart-display
           [cartList] = "masterAlbumList"
+          [cartCount] = "cartCount"
+          (purchaseSender) = "makePurchase()"
         ></cart-display>
       </div>
     </div>
@@ -41,6 +44,7 @@ export class AppComponent {
   ];
 
   public selectedAlbum: Album = null;
+  public cartCount: number = 0;
 
   selectAlbum2Edit(_album: Album) {
     this.selectedAlbum = _album;
@@ -56,5 +60,16 @@ export class AppComponent {
 
   addAlbum(_newAlbum: Album) {
     this.masterAlbumList.push(_newAlbum);
+  }
+
+  sendCartCountOver(_count: number) {
+    this.cartCount = _count;
+  }
+
+  makePurchase() {
+    for(var i=0; i < this.masterAlbumList.length; i++) {
+      this.masterAlbumList[i].inCart = false;
+    }
+    this.cartCount = 0;
   }
 }

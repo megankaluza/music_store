@@ -15,9 +15,16 @@ import { Album } from './album.model';
 
 export class AlbumCheckboxComponent {
   @Input() album: Album;
+  @Output() changeCartCountSender = new EventEmitter();
+
 
   toggleInCart(status: boolean){
     this.album.inCart = status;
-    console.log(this.album.inCart);
+    if(status === true) {
+      Album.cartCount++;
+    } else {
+      Album.cartCount--;
+    }
+    this.changeCartCountSender.emit(Album.cartCount);
   }
 }
