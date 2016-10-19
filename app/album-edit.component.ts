@@ -4,8 +4,9 @@ import { Album } from './album.model';
 @Component({
   selector: 'album-edit',
   template: `
-  <div *ngIf="album2Edit">
-    <h3>Edit {{album2Edit.title}}</h3>
+  <div *ngIf="album2Edit" class="panel">
+    <h2>Edit: {{album2Edit.title}}</h2>
+    <hr>
     <div class="form-group">
       <label>Title:</label>
       <input [(ngModel)]="album2Edit.title">

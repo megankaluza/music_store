@@ -16,7 +16,7 @@ body {
     h2 {
       color: $gray;
       font-family: 'Anton', sans-serif;
-      font-size: 4em;
+      font-size: 3em;
     }
     h4{
       color: $rose;
@@ -45,13 +45,13 @@ button {
 }
 
 select {
-  margin-top: 10%;
+  margin: 10%;
 }
 
 .checkbox {
   color: $rose;
   font-size: 1.5em;
-
+  font-family: 'Vidaloka', serif;
 }
 
 .container {

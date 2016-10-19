@@ -5,7 +5,7 @@ import { Album } from './album.model';
   selector: 'my-app',
   template: `
   <div class="container">
-    <h1>Mo' Fo Albums</h1>
+    <h1>Mo' Fo Albums <img src="resources/img/cd.png" alt="CD"></h1>
     <hr>
     <div class="row">
       <div class="col-sm-5">

@@ -5,7 +5,9 @@ import { Album } from './album.model';
   selector: 'album-add',
   template: `
   <button *ngIf="!initiateAlbumCreation" (click)="initiateCreation()">New Album</button>
-  <div *ngIf="initiateAlbumCreation">
+  <div *ngIf="initiateAlbumCreation" class="panel">
+  <h2>Add: New Album</h2>
+  <hr>
     <div class="form-group">
       <label>Title:</label>
       <input #title>
