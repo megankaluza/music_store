@@ -5,19 +5,29 @@ import { Album } from './album.model';
   selector: 'my-app',
   template: `
   <div class="container">
-    <h1>Albums for Days Yo</h1>
-    <album-list
-      [childAlbumList]="masterAlbumList"
-      (editSender) = "selectAlbum2Edit($event)"
-      (deleteSender) = "deleteAlbum($event)"
-    ></album-list>
-    <album-edit
-      [album2Edit] = "selectedAlbum"
-      (finishEditSender) = "finishEdit()"
-    ></album-edit>
-    <album-add
-      (newAlbumSender) = "addAlbum($event)"
-    ></album-add>
+    <h1>Mo' Fo Albums</h1>
+    <hr>
+    <div class="row">
+      <div class="col-sm-5">
+        <album-list
+          [childAlbumList]="masterAlbumList"
+          (editSender) = "selectAlbum2Edit($event)"
+          (deleteSender) = "deleteAlbum($event)"
+        ></album-list>
+        <album-edit
+          [album2Edit] = "selectedAlbum"
+          (finishEditSender) = "finishEdit()"
+        ></album-edit>
+        <album-add
+          (newAlbumSender) = "addAlbum($event)"
+        ></album-add>
+      </div>
+      <div class="col-sm-5">
+        <cart-display
+          [cartList] = "masterAlbumList"
+        ></cart-display>
+      </div>
+    </div>
   </div>
   `
 })

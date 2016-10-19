@@ -4,6 +4,7 @@ import { Album } from './album.model';
 @Component({
   selector: 'album-list',
   template: `
+  <h2>Albums:</h2>
   <select (change)="selectGenre($event.target.value)">
     <option value="All" selected="selected">Sort by Genre</option>
     <option value="All">All</option>
@@ -14,8 +15,9 @@ import { Album } from './album.model';
     <option value="Electronic">Electronic</option>
     <option value="Folk/Blue-Grass/Country">Folk/Blue-Grass/Country</option>
   </select>
-  <div *ngFor="let currentAlbum of childAlbumList | genre:selectedGenre">
-    <h3>{{currentAlbum.title}}</h3>
+  <div *ngFor="let currentAlbum of childAlbumList | genre:selectedGenre" class="panel">
+    <album-checkbox [album]="currentAlbum"></album-checkbox>
+    <h4>{{currentAlbum.title}}</h4>
     <ul>
       <li>Artist: {{currentAlbum.artist}}</li>
       <li>Genre: {{currentAlbum.genre}}</li>

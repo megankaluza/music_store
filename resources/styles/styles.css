@@ -1,3 +1,59 @@
-h1 {
-  color: blue;
+$blue: #3A506B;
+$white: #FFF;
+$gray: #EAD7D1;
+$rose: #DD99BB;
+$black: #000;
+
+body {
+  width: 100%;
+  background-color: $blue;
+    h1 {
+      color: $white;
+      text-align: center;
+      font-family: 'Anton', sans-serif;
+      font-size: 5em;
+    }
+    h2 {
+      color: $gray;
+      font-family: 'Anton', sans-serif;
+      font-size: 4em;
+    }
+    h4{
+      color: $rose;
+      font-size: 2em;
+      font-family: 'Anton', sans-serif;
+    }
+    ul {
+      color: $blue;
+      list-style-type: none;
+      font-size: 1.2em;
+      font-family: 'Vidaloka', serif;
+    }
+}
+
+button {
+  margin-left: 25%;
+  background-color: $black;
+  box-shadow: 5px 5px 5px $rose;
+  border: none;
+  color: $white;
+}
+
+.panel {
+  padding: 10%;
+  box-shadow: 5px 5px 5px $black;
+}
+
+select {
+  margin-top: 10%;
+}
+
+.checkbox {
+  color: $rose;
+  font-size: 1.5em;
+
+}
+
+.container {
+  padding: 3%;
 }

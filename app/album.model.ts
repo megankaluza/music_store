@@ -4,5 +4,6 @@ export class Album {
   public inCart: boolean;
   constructor (public title: string, public artist: string,public genre: string, public price: number) {
     this.id = Album.idCount++;
+    this.inCart = false;
   }
 }
