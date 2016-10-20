@@ -67,6 +67,7 @@ export class AppComponent {
   sendCartCountOver(_count: number) {
     this.cartCount = _count;
     this.findTotalCost();
+    console.log(this.cartCost);
   }
 
   makePurchase() {
@@ -77,8 +78,8 @@ export class AppComponent {
   }
 
   findTotalCost() {
+    this.cartCost = 0;
     for(var i=0; i < this.masterAlbumList.length; i++) {
-      this.cartCost = 0;
       if(this.masterAlbumList[i].inCart === true) {
         this.cartCost += this.masterAlbumList[i].price;
       }

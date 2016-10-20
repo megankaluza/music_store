@@ -7,7 +7,9 @@ import { AlbumListComponent } from './album-list.component';
 import { AlbumEditComponent  } from './album-edit.component';
 import { AlbumAddComponent } from './album-add.component';
 import { AlbumCheckboxComponent } from './album-checkbox.component';
-import { CartDisplayComponent } from './cart-display.component'
+import { CartDisplayComponent } from './cart-display.component';
+import { ReviewListComponent } from './review-list.component';
+import { ReviewAddComponent } from './review-add.component';
 
 import { GenrePipe } from './genre.pipe';
 import { CartPipe } from './cart.pipe';
@@ -25,6 +27,8 @@ import { CartPipe } from './cart.pipe';
     AlbumAddComponent,
     AlbumCheckboxComponent,
     CartDisplayComponent,
+    ReviewListComponent,
+    ReviewAddComponent,
     GenrePipe,
     CartPipe
   ],

@@ -54,9 +54,11 @@ export class AlbumAddComponent {
   @Output() newAlbumSender = new EventEmitter();
 
   makeNewAlbum(_title: string, _artist: string,_genre: string, _price: number) {
-    var newAlbum: Album = new Album(_title, _artist, _genre, _price);
-    this.newAlbumSender.emit(newAlbum);
-    this.initiateAlbumCreation = false;
+    if(_title !== '' && _artist !== '' && _genre !== '') {
+      var newAlbum: Album = new Album(_title, _artist, _genre, _price);
+      this.newAlbumSender.emit(newAlbum);
+      this.initiateAlbumCreation = false;
+    }
   }
 
   initiateCreation() {

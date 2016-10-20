@@ -25,6 +25,11 @@ import { Album } from './album.model';
     </ul>
     <button (click)="selectAlbum2Edit(currentAlbum)">Edit</button>
     <button (click)="deleteAlbum(currentAlbum)">Delete</button>
+    <button (click)="toggleReviews()">Reviews</button>
+    <review-list
+      [triggerReviews] = "showReviews"
+      [reviewedAlbum] = "currentAlbum"
+    ></review-list>
   </div>
   `
 })
@@ -36,6 +41,7 @@ export class AlbumListComponent {
   @Output() carryCartCountUpSender = new EventEmitter();
 
   public selectedGenre: string = "All";
+  public showReviews: boolean = false;
 
   selectAlbum2Edit(_currentAlbum: Album) {
     this.editSender.emit(_currentAlbum);
@@ -51,6 +57,14 @@ export class AlbumListComponent {
 
   carryCartCountUp(_count: number) {
     this.carryCartCountUpSender.emit(_count);
+  }
+
+  toggleReviews(){
+    if(this.showReviews === false){
+      this.showReviews = true;
+    }else{
+      this.showReviews = false;
+    }
   }
 
 }
