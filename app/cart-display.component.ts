@@ -4,13 +4,17 @@ import { Album } from './album.model';
 @Component({
   selector:'cart-display',
   template: `
-  <h2>Your Albums:</h2>
-  <div *ngFor="let currentAlbum of cartList | cart">
+  <div *ngFor="let currentAlbum of cartList | cart" class="panel">
+  <h2>In da bag <img src="resources/img/money.png" alt="Money"></h2>
+  <hr>
     <h4>{{currentAlbum.title}}</h4>
-  </div>
+    <ul>
+      <li>Price: {{currentAlbum.price}}</li>
+    </ul>
 
   <div *ngIf="cartCount > 0 && !cartEmptied">
     <button (click)="makePurchase()">Confirm</button>
+  </div>
   </div>
   `
 })

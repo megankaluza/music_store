@@ -4,7 +4,7 @@ import { Album } from './album.model';
 @Component({
   selector: 'album-list',
   template: `
-  <h2>Albums:</h2>
+  <h2>Select your Flavor.</h2>
   <select (change)="selectGenre($event.target.value)">
     <option value="All" selected="selected">Sort by Genre</option>
     <option value="All">All</option>

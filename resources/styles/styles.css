@@ -3,6 +3,7 @@ $white: #FFF;
 $gray: #EAD7D1;
 $rose: #DD99BB;
 $black: #000;
+$lightblue: #3F88C5;
 
 body {
   width: 100%;
@@ -17,6 +18,11 @@ body {
       color: $gray;
       font-family: 'Anton', sans-serif;
       font-size: 3em;
+    }
+    h3 {
+      color: $lightblue;
+      font-size: 1.5em;
+      font-family: 'Anton', sans-serif;
     }
     h4{
       color: $rose;
@@ -48,11 +54,6 @@ select {
   margin: 10%;
 }
 
-.checkbox {
-  color: $rose;
-  font-size: 1.5em;
-  font-family: 'Vidaloka', serif;
-}
 
 .container {
   padding: 3%;
