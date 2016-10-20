@@ -25,7 +25,7 @@ import { Album } from './album.model';
     </ul>
     <button (click)="selectAlbum2Edit(currentAlbum)">Edit</button>
     <button (click)="deleteAlbum(currentAlbum)">Delete</button>
-    <button (click)="toggleReviews()">Reviews</button>
+    <button (click)="toggleReviews(currentAlbum)">Reviews</button>
     <review-list
       [triggerReviews] = "showReviews"
       [reviewedAlbum] = "currentAlbum"
@@ -59,11 +59,13 @@ export class AlbumListComponent {
     this.carryCartCountUpSender.emit(_count);
   }
 
-  toggleReviews(){
+  toggleReviews(_album: Album){
     if(this.showReviews === false){
       this.showReviews = true;
+      _album.showReviews = true;
     }else{
       this.showReviews = false;
+      _album.showReviews = false;
     }
   }
 

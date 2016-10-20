@@ -5,7 +5,7 @@ import { Review } from './review.model';
 @Component({
   selector: 'review-list',
   template: `
-  <div *ngIf="triggerReviews">
+  <div *ngIf="triggerReviews && reviewedAlbum.showReviews">
     <h3>Reviews</h3>
     <div class="reviewDiv" *ngFor="let review of reviewedAlbum.reviewList">
       <p class="review-name">{{review.name}}</p>
