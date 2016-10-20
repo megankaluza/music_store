@@ -12,8 +12,14 @@ import { Review } from './review.model';
       <input #newName>
     </div>
     <div class="form-group">
-      <label>Rating:</label>
-      <input #newRating>
+      <label>Star Rating (1-5):</label>
+      <select #newRating>
+        <option value="1">&#9734; </option>
+        <option value="2">&#9734; &#9734; </option>
+        <option value="3">&#9734; &#9734; &#9734; </option>
+        <option value="4">&#9734; &#9734; &#9734; &#9734; </option>
+        <option value="5">&#9734; &#9734; &#9734; &#9734; &#9734; </option>
+      </select>
     </div>
     <div class="form-group">
       <label>Review:</label>
@@ -42,8 +48,12 @@ export class ReviewAddComponent {
   }
 
   makeReview(name: string, rating: number, review: string) {
-    if(name !== '' && rating !== null && review !== '') {
-      var newReview: Review = new Review(name, rating, review);
+    if(name !== '' && review !== '') {
+      var imageCount = [];
+      for(var i = 0; i < rating; i++) {
+        imageCount.push(i);
+      }
+      var newReview: Review = new Review(name, imageCount, review);
       this.addReviewSender.emit(newReview);
     }
   }

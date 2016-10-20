@@ -38,17 +38,13 @@ body {
 }
 
 button {
-  margin-left: 5%;
+  margin: 5%;
   background-color: $black;
   box-shadow: 5px 5px 5px $rose;
   border: none;
   color: $white;
 }
 
-.panel {
-  padding: 10%;
-  box-shadow: 5px 5px 5px $black;
-}
 
 select {
   margin: 10%;
@@ -56,6 +52,17 @@ select {
 
 .container {
   padding: 3%;
+}
+
+.review-name {
+  text-shadow: 5px 5px 5px $gray;
+  font-size: 3em;
+  font-family: 'Vidaloka', serif;
+}
+
+.panel {
+  padding: 10%;
+  box-shadow: 5px 5px 5px $black;
 }
 
 .purchase {

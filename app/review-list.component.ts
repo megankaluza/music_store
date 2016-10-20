@@ -6,11 +6,11 @@ import { Review } from './review.model';
   selector: 'review-list',
   template: `
   <div *ngIf="triggerReviews && reviewedAlbum.showReviews">
-    <h3>Reviews</h3>
-    <div class="reviewDiv" *ngFor="let review of reviewedAlbum.reviewList">
+    <h2>Mo'Fo Reviews</h2>
+    <div class="reviewDiv panel" *ngFor="let review of reviewedAlbum.reviewList">
       <p class="review-name">{{review.name}}</p>
       <ul>
-        <li>{{review.rating}}</li>
+        <li><img src='resources/img/star.png' *ngFor="let repeat of review.rating"></li>
         <li>{{review.review}}</li>
       </ul>
     </div>
@@ -28,5 +28,4 @@ export class ReviewListComponent {
   addReview(_review: Review) {
     this.reviewedAlbum.reviewList.push(_review);
   }
-
 }
