@@ -8,7 +8,7 @@ import { Album } from './album.model';
   <h2>In da bag <img src="resources/img/money.png" alt="Money"></h2>
   <hr>
     <h4>{{currentAlbum.title}}</h4>
-    <img *ngIf="currentAlbum.imageUrl" src={{currentAlbum.imageUrl}} class="img">
+    <img *ngIf="currentAlbum.imageUrl" src={{currentAlbum.imageUrl}} class="img" alt="No Image Provided">
     <ul>
       <li>Price: {{currentAlbum.price}}</li>
     </ul>

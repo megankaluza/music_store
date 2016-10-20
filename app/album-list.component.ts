@@ -12,7 +12,7 @@ import { Album } from './album.model';
     <album-checkbox [album]="currentAlbum" (changeCartCountSender)="carryCartCountUp($event)"></album-checkbox>
     <h4>{{currentAlbum.title}}</h4>
     <ul>
-    <img *ngIf="currentAlbum.imageUrl" src={{currentAlbum.imageUrl}} class="img">
+    <img *ngIf="currentAlbum.imageUrl" src={{currentAlbum.imageUrl}} class="img" alt="No Image Provided">
       <li>Artist: {{currentAlbum.artist}}</li>
       <li>Genre: {{currentAlbum.genre}}</li>
       <li>Price: {{currentAlbum.price}}</li>
