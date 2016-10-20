@@ -57,3 +57,9 @@ select {
 .container {
   padding: 3%;
 }
+
+.purchase {
+  padding-top: 2em;
+  height: 6em;
+  width: 18em;
+}

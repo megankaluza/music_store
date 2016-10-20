@@ -23,10 +23,11 @@ import { Album } from './album.model';
           (newAlbumSender) = "addAlbum($event)"
         ></album-add>
       </div>
-      <div class="col-sm-5">
+      <div class="col-sm-offset-2 col-sm-5">
         <cart-display
           [cartList] = "masterAlbumList"
           [cartCount] = "cartCount"
+          [cartCost] = "cartCost"
           (purchaseSender) = "makePurchase()"
         ></cart-display>
       </div>
@@ -45,6 +46,7 @@ export class AppComponent {
 
   public selectedAlbum: Album = null;
   public cartCount: number = 0;
+  public cartCost: number = 0;
 
   selectAlbum2Edit(_album: Album) {
     this.selectedAlbum = _album;
@@ -64,6 +66,7 @@ export class AppComponent {
 
   sendCartCountOver(_count: number) {
     this.cartCount = _count;
+    this.findTotalCost();
   }
 
   makePurchase() {
@@ -72,4 +75,14 @@ export class AppComponent {
     }
     this.cartCount = 0;
   }
+
+  findTotalCost() {
+    for(var i=0; i < this.masterAlbumList.length; i++) {
+      this.cartCost = 0;
+      if(this.masterAlbumList[i].inCart === true) {
+        this.cartCost += this.masterAlbumList[i].price;
+      }
+    }
+  }
+
 }
