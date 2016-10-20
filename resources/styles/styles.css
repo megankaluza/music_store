@@ -38,13 +38,11 @@ body {
 }
 
 button {
-  margin: 5%;
   background-color: $black;
   box-shadow: 5px 5px 5px $rose;
   border: none;
   color: $white;
 }
-
 
 select {
   margin: 10%;
@@ -52,6 +50,12 @@ select {
 
 .container {
   padding: 3%;
+}
+
+.img {
+  width: 110px;
+  box-shadow: 5px 5px 5px $black;
+  float: right;
 }
 
 .review-name {
@@ -69,4 +73,9 @@ select {
   padding-top: 2em;
   height: 6em;
   width: 18em;
+}
+
+#cart-display {
+  margin-bottom: 2em;
+  padding-bottom: 8em;
 }

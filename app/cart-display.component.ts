@@ -4,10 +4,11 @@ import { Album } from './album.model';
 @Component({
   selector:'cart-display',
   template: `
-  <div *ngFor="let currentAlbum of cartList | cart" class="panel">
+  <div *ngFor="let currentAlbum of cartList | cart" class="panel" id="cart-display">
   <h2>In da bag <img src="resources/img/money.png" alt="Money"></h2>
   <hr>
     <h4>{{currentAlbum.title}}</h4>
+    <img *ngIf="currentAlbum.imageUrl" src={{currentAlbum.imageUrl}} class="img">
     <ul>
       <li>Price: {{currentAlbum.price}}</li>
     </ul>

@@ -34,10 +34,10 @@ import { Album } from './album.model';
 
 export class AppComponent {
   public masterAlbumList: Album[] = [
-    new Album("Dark Side of the Moon", "Pink Floyd", "Rock", 9.99),
-    new Album("Abbey Road", "The Beatles", "Rock", 15.99),
-    new Album("Lemonade", "Beyonce", "Pop", 20.99),
-    new Album("Sevens Travels", "Atmosphere", "Hip-Hop", 5.99)
+    new Album("Dark Side of the Moon", "Pink Floyd", "Rock", 9.99, "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png"),
+    new Album("Abbey Road", "The Beatles", "Rock", 15.99, "http://www.pocketfullofliberty.com/wp-content/uploads/2014/05/beatles-abbey-road.jpg"),
+    new Album("Lemonade", "Beyonce", "Pop", 20.99, "http://pelicanmagazine.com.au/wp-content/uploads/2016/05/51144147.jpg"),
+    new Album("Sevens Travels", "Atmosphere", "Hip-Hop", 5.99, "https://upload.wikimedia.org/wikipedia/en/a/a1/Seven\'s_Travels_(10_Year_Anniversary_Edition).png")
   ];
 
   public cartCount: number = 0;

@@ -23,17 +23,23 @@ import { Album } from './album.model';
       <label>Price:</label>
       <input #price>
     </div>
+    <div class="form-group">
+      <label>Image URL:</label>
+      <input #imageUrl>
+    </div>
     <button (click)="
-      makeNewAlbum(title.value,artist.value,price.value);
+      makeNewAlbum(title.value,artist.value,price.value,imageUrl.value);
       title.value = '';
       artist.value = '';
       price.value = '';
+      imageUrl.value = '';
     ">Finished</button>
     <button (click)="
       cancelCreation();
       title.value = '';
       artist.value = '';
       price.value = '';
+      imageUrl.value = '';
     ">Cancel</button>
   </div>
   `
@@ -44,9 +50,9 @@ export class AlbumAddComponent {
   public newGenre: string = 'Rock';
   @Output() newAlbumSender = new EventEmitter();
 
-  makeNewAlbum(_title: string, _artist: string, _price: number) {
+  makeNewAlbum(_title: string, _artist: string, _price: number, _imageUrl: string) {
     if(_title !== '' && _artist !== '') {
-      var newAlbum: Album = new Album(_title, _artist, this.newGenre, _price);
+      var newAlbum: Album = new Album(_title, _artist, this.newGenre, _price, _imageUrl);
       this.newAlbumSender.emit(newAlbum);
       this.initiateAlbumCreation = false;
     }

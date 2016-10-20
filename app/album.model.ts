@@ -8,7 +8,7 @@ export class Album {
   public showReviews: boolean;
   public showEditForm: boolean;
   public reviewList: Review[] = [];
-  constructor (public title: string, public artist: string,public genre: string, public price: number) {
+  constructor (public title: string, public artist: string,public genre: string, public price: number, public imageUrl: string) {
     this.id = Album.idCount++;
     this.inCart = false;
     this.showReviews = false;
