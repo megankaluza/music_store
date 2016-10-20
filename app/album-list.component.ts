@@ -16,28 +16,44 @@ import { Album } from './album.model';
       <li>Genre: {{currentAlbum.genre}}</li>
       <li>Price: {{currentAlbum.price}}</li>
     </ul>
-    <button (click)="selectAlbum2Edit(currentAlbum)">Edit</button>
+    <button (click)="toggleEdit(currentAlbum)">Edit</button>
     <button (click)="deleteAlbum(currentAlbum)">Delete</button>
     <button (click)="toggleReviews(currentAlbum)">Reviews</button>
     <review-list
       [triggerReviews] = "showReviews"
       [reviewedAlbum] = "currentAlbum"
     ></review-list>
+    <album-edit
+      [album2Edit] = "currentAlbum"
+      [editTrigger] = "triggerEdit"
+      (finishEditSender) = "finishEdit()"
+    ></album-edit>
   </div>
   `
 })
 
 export class AlbumListComponent {
   @Input() childAlbumList: Album [];
-  @Output() editSender = new EventEmitter();
   @Output() deleteSender = new EventEmitter();
   @Output() carryCartCountUpSender = new EventEmitter();
 
   public selectedGenre: string = "All";
   public showReviews: boolean = false;
+  public triggerEdit: boolean = false;
 
-  selectAlbum2Edit(_currentAlbum: Album) {
-    this.editSender.emit(_currentAlbum);
+  toggleEdit(_album: Album) {
+    console.log("yo");
+    if(_album.showEditForm) {
+      this.triggerEdit = false;
+      _album.showEditForm = false;
+    } else {
+      this.triggerEdit = true;
+      _album.showEditForm = true;
+    }
+  }
+
+  finishEdit() {
+    console.log("fuck");
   }
 
   deleteAlbum(_currentAlbum: Album) {
@@ -53,7 +69,7 @@ export class AlbumListComponent {
   }
 
   toggleReviews(_album: Album){
-    if(this.showReviews === false){
+    if(!_album.showReviews){
       this.showReviews = true;
       _album.showReviews = true;
     }else{

@@ -6,10 +6,12 @@ export class Album {
   public id: number;
   public inCart: boolean;
   public showReviews: boolean;
+  public showEditForm: boolean;
   public reviewList: Review[] = [];
   constructor (public title: string, public artist: string,public genre: string, public price: number) {
     this.id = Album.idCount++;
     this.inCart = false;
     this.showReviews = false;
+    this.showEditForm = false;
   }
 }

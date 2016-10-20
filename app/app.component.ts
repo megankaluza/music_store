@@ -15,10 +15,6 @@ import { Album } from './album.model';
           (deleteSender) = "deleteAlbum($event)"
           (carryCartCountUpSender) = "sendCartCountOver($event)"
         ></album-list>
-        <album-edit
-          [album2Edit] = "selectedAlbum"
-          (finishEditSender) = "finishEdit()"
-        ></album-edit>
         <album-add
           (newAlbumSender) = "addAlbum($event)"
         ></album-add>
@@ -44,20 +40,11 @@ export class AppComponent {
     new Album("Sevens Travels", "Atmosphere", "Hip-Hop", 5.99)
   ];
 
-  public selectedAlbum: Album = null;
   public cartCount: number = 0;
   public cartCost: number = 0;
 
-  selectAlbum2Edit(_album: Album) {
-    this.selectedAlbum = _album;
-  }
-
   deleteAlbum(_album: Album) {
     this.masterAlbumList.splice(this.masterAlbumList.indexOf(_album),1);
-  }
-
-  finishEdit() {
-    this.selectedAlbum = null;
   }
 
   addAlbum(_newAlbum: Album) {
