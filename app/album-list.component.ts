@@ -5,16 +5,9 @@ import { Album } from './album.model';
   selector: 'album-list',
   template: `
   <h2>Select yo'<img src="resources/img/ice-cream.png" alt="Money">Flava.</h2>
-  <select (change)="selectGenre($event.target.value)">
-    <option value="All" selected="selected">Sort by Genre</option>
-    <option value="All">All</option>
-    <option value="Rock">Rock</option>
-    <option value="Hip-Hop">Hip-Hop</option>
-    <option value="Pop">Pop</option>
-    <option value="Classical">Classical</option>
-    <option value="Electronic">Electronic</option>
-    <option value="Folk/Blue-Grass/Country">Folk/Blue-Grass/Country</option>
-  </select>
+  <select-filter
+    (genreSender)="selectGenre($event)"
+  ></select-filter>
   <div *ngFor="let currentAlbum of childAlbumList | genre:selectedGenre" class="panel">
     <album-checkbox [album]="currentAlbum" (changeCartCountSender)="carryCartCountUp($event)"></album-checkbox>
     <h4>{{currentAlbum.title}}</h4>

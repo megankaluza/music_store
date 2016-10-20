@@ -10,6 +10,8 @@ import { AlbumCheckboxComponent } from './album-checkbox.component';
 import { CartDisplayComponent } from './cart-display.component';
 import { ReviewListComponent } from './review-list.component';
 import { ReviewAddComponent } from './review-add.component';
+import { SelectGenreComponent } from './select-genre.component';
+import { SelectFilterComponent } from './select-filter.component';
 
 import { GenrePipe } from './genre.pipe';
 import { CartPipe } from './cart.pipe';
@@ -29,6 +31,8 @@ import { CartPipe } from './cart.pipe';
     CartDisplayComponent,
     ReviewListComponent,
     ReviewAddComponent,
+    SelectGenreComponent,
+    SelectFilterComponent,
     GenrePipe,
     CartPipe
   ],

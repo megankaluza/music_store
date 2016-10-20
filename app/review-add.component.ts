@@ -56,6 +56,7 @@ export class ReviewAddComponent {
       var newReview: Review = new Review(name, imageCount, review);
       this.addReviewSender.emit(newReview);
     }
+    this.showForm = false;
   }
 
 }

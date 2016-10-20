@@ -16,32 +16,22 @@ import { Album } from './album.model';
       <label>Artist:</label>
       <input #artist>
     </div>
-    <div class="form-group">
-      <select #genre>
-        <option value="Rock" selected="selected">Genre</option>
-        <option value="Rock">Rock</option>
-        <option value="Hip-Hop">Hip-Hop</option>
-        <option value="Pop">Pop</option>
-        <option value="Classical">Classical</option>
-        <option value="Electronic">Electronic</option>
-        <option value='Folk/Blue-Grass/Country'>Folk/Blue-Grass/Country</option>
-      </select>
-    </div>
+    <select-genre
+      (genreSender)="setGenre($event)"
+    ></select-genre>
     <div class="form-group">
       <label>Price:</label>
       <input #price>
     </div>
     <button (click)="
-      makeNewAlbum(title.value,artist.value,genre.value,price.value);
+      makeNewAlbum(title.value,artist.value,price.value);
       title.value = '';
-      genre.value ='';
       artist.value = '';
       price.value = '';
     ">Finished</button>
     <button (click)="
       cancelCreation();
       title.value = '';
-      genre.value ='';
       artist.value = '';
       price.value = '';
     ">Cancel</button>
@@ -51,11 +41,12 @@ import { Album } from './album.model';
 
 export class AlbumAddComponent {
   public initiateAlbumCreation: boolean = false;
+  public newGenre: string = 'Rock';
   @Output() newAlbumSender = new EventEmitter();
 
-  makeNewAlbum(_title: string, _artist: string,_genre: string, _price: number) {
-    if(_title !== '' && _artist !== '' && _genre !== '') {
-      var newAlbum: Album = new Album(_title, _artist, _genre, _price);
+  makeNewAlbum(_title: string, _artist: string, _price: number) {
+    if(_title !== '' && _artist !== '') {
+      var newAlbum: Album = new Album(_title, _artist, this.newGenre, _price);
       this.newAlbumSender.emit(newAlbum);
       this.initiateAlbumCreation = false;
     }
@@ -67,5 +58,9 @@ export class AlbumAddComponent {
 
   cancelCreation() {
     this.initiateAlbumCreation = false;
+  }
+
+  setGenre(genreInput: string) {
+    this.newGenre = genreInput;
   }
 }
